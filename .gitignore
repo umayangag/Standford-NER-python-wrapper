@@ -3,3 +3,4 @@
 .directory
 stanford-ner/
 tokenizers/
+venv

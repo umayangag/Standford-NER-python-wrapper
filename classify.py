@@ -4,6 +4,7 @@ from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from flask import request
 
 app = Flask(__name__)
 api = Api(app)
@@ -32,11 +33,7 @@ def sort_entities(classified_text):
 
 class NER(Resource):
     def post(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument("input")
-        args = parser.parse_args()
-        text = args["input"]
-
+        text = request.get_json()
         tokenized_text = word_tokenize(text)
         classified_text = st.tag(tokenized_text)
 
