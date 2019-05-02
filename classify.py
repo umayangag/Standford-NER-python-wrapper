@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 from flask import request
+from waitress import serve
 
 app = Flask(__name__)
 api = Api(app)
@@ -41,4 +42,4 @@ class NER(Resource):
 
 
 api.add_resource(NER, "/classify")
-app.run(debug=True)
+serve(app, port=8080)

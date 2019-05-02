@@ -9,4 +9,4 @@ run ./install.sh
 
 # Usage
 
-POST ip:5000/classify
+POST ip:8080/classify
