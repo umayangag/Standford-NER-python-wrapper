@@ -35,7 +35,7 @@ def sort_entities(classified_text):
 
 class NER(Resource):
     def post(self):
-        text = request.get_json()
+        text = request.get_json().replace("\n", "\n<<enter>> ")
         tokenized_text = word_tokenize(text)
         classified_text = st.tag(tokenized_text)
 
