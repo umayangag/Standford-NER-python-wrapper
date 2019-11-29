@@ -15,6 +15,7 @@ st = StanfordNERTagger('stanford-ner/classifiers/english.all.3class.distsim.crf.
                        encoding='utf-8')
 
 
+# sort the NER result to merge entities of same class together
 def sort_entities(classified_text):
     classified_text.append([" ", "O"])
     sorted_array = []
@@ -35,6 +36,9 @@ def sort_entities(classified_text):
 
 class NER(Resource):
     def post(self):
+        if request.get_json() is None:
+            return {"error": "invalid input"}, 500
+
         text = request.get_json().replace("\n", "\n<<enter>> ")
         tokenized_text = word_tokenize(text)
         classified_text = st.tag(tokenized_text)
@@ -43,4 +47,4 @@ class NER(Resource):
 
 
 api.add_resource(NER, "/classify")
-serve(app, port=8080)
+serve(app, port=8080)  # Change port number for production

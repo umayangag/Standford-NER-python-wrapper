@@ -1,12 +1,26 @@
 # Standford-NER-python-wrapper
 A python wrapper and server implementation for Stanford NER
 
-# Requierments 
+# Requirements 
 Python 3.6, Java RE
 
 # Installation 
-run ./install.sh
+Run the following command to install the dependencies.
+
+    ./install.sh
 
 # Usage
 
-POST ip:8080/classify
+POST $IP:8080/classify
+
+    Request  : JSON encoded text body
+    Response : [
+    [
+       Value,
+       Class
+    ],
+    [
+       Value,
+       Class
+    ]
+    ] 
