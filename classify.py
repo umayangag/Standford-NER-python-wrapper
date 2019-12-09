@@ -26,7 +26,6 @@ def sort_entities(classified_text):
         if current_class == previous_class:
             previous_word += " " + current_word
         else:
-            # TODO: bug: if same word with different class is found its added to the list
             if [previous_word, previous_class] not in sorted_array and previous_word != "" and previous_class != "O":
                 sorted_array.append([previous_word, previous_class])
             previous_word = current_word
