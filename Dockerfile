@@ -20,7 +20,7 @@ RUN unzip stanford-ner-2018-10-16.zip
 RUN mv stanford-ner-2018-10-16/ stanford-ner
 RUN rm stanford-ner-2018-10-16.zip
 # RUN python3 import nltk
-RUN python3 -m nltk.downloader -d /home/appuser/nltk_data punkt
+RUN python3 -m nltk.downloader -d /usr/local/nltk_data punkt
 
 # Install JRE
 RUN apt update
