@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt-get install python3-pip
 sudo pip3 install virtualenv
-virtualenv -p /usr/bin/python3.6 venv
+virtualenv -p /usr/bin/python3.8 venv
 source venv/bin/activate
 pip install --upgrade pip
 pip install nltk flask flask_restful waitress

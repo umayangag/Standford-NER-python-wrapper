@@ -2,6 +2,7 @@
 .idea/
 .directory
 stanford-ner/
+stanford-ner-2018-10-16/
 tokenizers/
 venv
 nohup.out
