@@ -19,7 +19,13 @@ RUN wget https://nlp.stanford.edu/software/stanford-ner-2018-10-16.zip
 RUN unzip stanford-ner-2018-10-16.zip
 RUN mv stanford-ner-2018-10-16/ stanford-ner
 RUN rm stanford-ner-2018-10-16.zip
-RUN python3 -m nltk.downloader -d nltk_data punkt
+# RUN python3 import nltk
+RUN python3 -m nltk.downloader punkt
+
+# Install JRE
+RUN apt update
+RUN apt install openjdk-11-jre -y
+ENV JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk"    
 
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
