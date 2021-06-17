@@ -52,4 +52,4 @@ class HealthCheck(Resource):
 
 api.add_resource(NER, "/classify")
 api.add_resource(HealthCheck, "/health")
-serve(app, port=8081)  # Change port number for production
+serve(app, port=8080)  # Change port number for production
