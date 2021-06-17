@@ -45,5 +45,11 @@ class NER(Resource):
         return sort_entities(classified_text), 200
 
 
+class HealthCheck(Resource):
+    def get(self):
+        return "health is okay", 200
+
+
 api.add_resource(NER, "/classify")
-serve(app, port=8080)  # Change port number for production
+api.add_resource(HealthCheck, "/health")
+serve(app, port=8081)  # Change port number for production
