@@ -3,7 +3,7 @@
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from flask import Flask
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource
 from flask import request
 from waitress import serve
 
@@ -52,4 +52,4 @@ class HealthCheck(Resource):
 
 api.add_resource(NER, "/classify")
 api.add_resource(HealthCheck, "/health")
-serve(app, port=8080)  # Change port number for production
+serve(app, port=8081)  # Change port number for production
