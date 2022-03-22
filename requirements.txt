@@ -15,6 +15,6 @@ regex==2021.4.4
 six==1.16.0
 tqdm==4.61.1
 typing-extensions==3.10.0.0
-waitress==2.0.0
+waitress==2.1.1
 Werkzeug==2.0.1
 zipp==3.4.1
