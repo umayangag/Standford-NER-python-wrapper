@@ -3,11 +3,13 @@
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import word_tokenize
 from flask import Flask
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource
 from flask import request
 from waitress import serve
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 
 st = StanfordNERTagger('stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz',
